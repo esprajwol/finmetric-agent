@@ -255,8 +255,10 @@ def run_agent(task, competitors_text, max_revisions, csv_file_obj):
     }
     thread = {"configurable": {"thread_id": "1"}}
 
-    output_log = ""
-    final_report = ""
+    output_log = "🚀 Initializing Agent...\n\n"
+    final_report = "### ⏳ Generating final report...\n\nPlease wait. The agent is gathering financial data, searching for competitors, and running analysis. You can check the **Agent Progress Log** tab for live updates!"
+    
+    yield output_log, final_report
 
     for s in graph.stream(initial_state, thread):
         output_log += str(s) + "\n\n"
@@ -291,7 +293,7 @@ custom_css = """
 """
 
 with gr.Blocks(
-    title="Financial Performance Reporting Agent",
+    title="Finmetric Orchestrator AI Agent",
     theme=gr.themes.Soft(
         primary_hue="indigo",
         secondary_hue="pink",
@@ -301,7 +303,7 @@ with gr.Blocks(
 ) as demo:
     gr.HTML(
         """
-        <div class="main-header">Financial Performance Reporting Agent</div>
+        <div class="main-header">Finmetric Orchestrator AI Agent</div>
         <div class="sub-header">AI-Powered Financial Analysis & Competitor Comparison</div>
         """
     )
