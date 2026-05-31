@@ -9,3 +9,4 @@ pandas==2.2.2
 tavily-python==0.3.3
 gradio
 huggingface-hub<0.26.0
+a2wsgi==1.0.7
